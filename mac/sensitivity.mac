@@ -1,0 +1,12 @@
+# Add detectors
+Detector101 = Yes
+
+RxOnCycles101 = 2
+RxOffCycles101 = 2
+
+XSegments1 = 14
+ZSegments1 = 11
+
+SetupFileName = Setup.root
+OscillationFileName = Oscillation.root
+MinimizationFileName = Minimization.root

@@ -1,0 +1,58 @@
+= Coding Guidelines =
+
+Having a set of guidelines will make it easier for future users to read and contribute to the code base.  The following expresses a set of suggested coding guidelines for users.  The main code base is in C++11, there are many tutorials and resources for users available on the web.
+
+----
+
+== Documentation ==
+Documentation is really important for the people who want to understand the code after you have written it.  We will be using [[http://www.stack.nl/~dimitri/doxygen/|Doxygen]] in order to create the documentation for the code.  As such, make sure to look at the [[http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html| Doxygen Commenting Rules]] to understand how to implement this in your code.  It is always a good idea to document all classes, functions, and variables to help future users understand your code.
+
+----
+
+== File Name Extensions ==
+Name extensions aren't required by current systems, but they will help people follow the structure of the code:
+ * C++11 source files are named filename.cxx with a single class defined in each file.  The file name should match the name of the class. If more than one class is defined in a file, then the file name should match the most important class of the file.
+ * C++11 header files are named filename.hxx.  There should be a header file associated with each source file.
+ * C source files are named filename.c
+ * C header files are named filename.h
+
+----
+
+== Namespaces ==
+It can be convenient to include a '''use''' directive into your source code to save typing the namespace name.  However, these should not be added to header files since they may cause unexpected namespace collisions.
+
+The standard library should be explicitly referenced using the '''std''' namespace so that it is very clear where to find the documentation.  The '''std''' namespace should not be abbreviated using a '''use''' directive.
+
+----
+
+== Naming Conventions ==
+It can really help other people to understand your code if you use naming conventions.  For example, with naming conventions other people (including those who may be new to C++11) can tell at a glance if something is a function, a class or a variable.  Since the analysis is also heavily dependent on ROOT, these suggestions match the naming conventions established by ROOT.
+
+=== Type and Class Names ===
+A type name should begin with a capital '''T''' (for example TTree or TMath).  In most cases, use a single '''T''', however if you are creating a pure abstract base class or a pure mix-in class, use '''TV''' or '''TM''' respectively.
+
+=== Class Field Names ===
+In order to distinguish local variables from class fields, it is easier to prefix every class field with an "f".  If a field has a multi-word name, then each word should be capitalized (e.g. fFieldWithLongName).  Fields should be private or protected and you should avoid public fields.
+
+=== Class Methods ===
+All class methods should start with capital letters.  Since (ideally) no class fields are visible outside of the class, ensure that you have routines to get and set field variables (named Get''Variable'' and Set''Variable'').
+
+=== Class Destructors ===
+Since you never know when a class might be used as a base class, always use a virtual destructor.
+
+=== Sub-Class Names ===
+A type name that is defined inside of a class should not begin with '''T''', but should begin with a capital (e.g. TMainObject::!SubObject). The exception to this rule is that typedefs which mimic STL types (e.g. iterators) should obey STL rules (TMainObject::iterator).
+
+----
+
+== Function, Variables and Parameter Names ==
+
+=== Function Names ===
+A function name should begin with a lower case and follow the normal C conventions.  For example a long function name should look like "a_long_function_name()".
+
+=== Local Variables ===
+Local variables and method parameters should always start with a lower case letter. If a variable has a long name, then the following words should be capitalized (e.g. aLongVariableName).
+
+=== Global Variables ===
+'''DO NOT USE GLOBAL VARIABLES!'''  If you think you need a global variable, write a singleton class instead. If you still really need that global variable use the prefix "g" and document it '''really really well'''.
+

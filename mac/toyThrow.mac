@@ -1,0 +1,51 @@
+#####################################################################
+#### Author: K. Gilje
+#### Date: Oct, 2016
+#### Macro to test toy throwing
+#### Comments starts with a #
+#####################################################################
+
+Detector101 = Yes
+Detector102 = No
+Detector103 = No
+
+RxOnCycles101 = 2
+
+RxOffCycles101 = 2
+ 
+ReactorRadius = 0.2
+ReactorHeight = 0.5
+
+ReactorPower = 0.085
+
+XSegments1 = 14
+ZSegments1 = 11
+
+EnergySpectrumFile = ./inputs/EnergyTableHeu.txt
+
+BKGInputFile = ./inputs/SimulatedBackground.txt
+
+IsReferenceOscillated = No
+#Input the user-defined oscillation parameters for reference model histograms
+ReferenceDeltam2 = 1.78
+ReferenceSin22theta = 0.09
+
+ToySignalUCCovFile101 = covInputs/Cov_Sys_HFIR_101_UC.root
+ToySignalUCCovFile102 = covInputs/Cov_Sys_HFIR_102_UC.root
+
+ToyBkgUCCovFile101 = covInputs/Cov_Bkg_HFIR_101_UC.root
+ToyBkgUCCovFile102 = covInputs/Cov_Bkg_HFIR_102_UC.root
+
+ToySignalFCCovFile = covInputs/Cov_Sys_HFIR_FC.root
+
+ToyBkgFCCovFile = covInputs/Cov_Bkg_HFIR_FC.root
+
+SignalUCCovFile101 = covInputs/Cov_Sys_HFIR_101_UC.root
+SignalUCCovFile102 = covInputs/Cov_Sys_HFIR_102_UC.root
+
+BkgUCCovFile101 = covInputs/Cov_Bkg_HFIR_101_UC.root
+BkgUCCovFile102 = covInputs/Cov_Bkg_HFIR_102_UC.root
+
+SignalFCCovFile = covInputs/Cov_Sys_HFIR_FC.root
+
+BkgFCCovFile = covInputs/Cov_Bkg_HFIR_FC.root

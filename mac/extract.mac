@@ -1,0 +1,28 @@
+#####################################################################
+#### Author: Jonathan Insler
+#### Edited by: P. T. Surukuchi
+#### Date: Dec 12 2017
+#### Macro for extracting data
+
+#####################################################################
+Detector101 = Yes
+Detector102 = No
+Detector103 = No
+
+EnergySpectrumFile = ./inputs/EnergyTableHeu.txt
+BKGInputFile = ./inputs/SimulatedBackground.txt
+
+Xdistance101=5.904
+Ydistance101=0
+Zdistance101=5.16
+AngleOffset101 = 0
+
+IBDDataFileLocation = ./untracked/Truth/IBD/
+BGDataFileLocation = ./untracked/Truth/BG/
+DetectorResponseFile101=./inputs//DetectorResponse.root
+
+outputFileName = untracked/test.root
+
+
+
+
